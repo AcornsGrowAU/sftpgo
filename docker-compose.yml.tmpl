@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  sftpgo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - SFTPGO_VERSION=${SFTPGO_VERSION}
+        - ROCKYLINUX_VERSION=${ROCKYLINUX_VERSION}
+    image: sftpgo:${RUBY_VERSION}
