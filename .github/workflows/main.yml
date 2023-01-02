@@ -34,6 +34,8 @@ jobs:
 
       - name: Render docker-compose.yml
         run: SFTPGO_VERSION=${{ matrix.sftpgo }} envsubst <  docker-compose.yml.tmpl >  docker-compose.yml
+        
+      - run: cat docker-compose.yml
 
       - name: Build image
         run: docker-compose -f docker-compose.yml build sftpgo
